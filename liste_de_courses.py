@@ -1,5 +1,11 @@
 
-choix = [": Ajouter un élément à la liste de courses", ": Retirer un élement de la liste de courses", ": Afficher les éléments de la liste de courses", ": Vider la liste de courses", ": Quitter le programme"]
+choix = [
+    ": Ajouter un élément à la liste de courses",
+    ": Retirer un élement de la liste de courses",
+    ": Afficher les éléments de la liste de courses",
+    ": Vider la liste de courses",
+    ": Quitter le programme",
+]
 liste_courses = []
 while True :
     print("Choississez parmis les 5 options suivante : ")
