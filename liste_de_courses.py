@@ -1,3 +1,9 @@
+import json
+import os.path
+
+cur_dir = os.path.dirname(__file__)
+
+
 
 choix = [
     ": Ajouter un élément à la liste de courses",
@@ -7,7 +13,16 @@ choix = [
     ": Quitter le programme",
 ]
 liste_courses = []
+separateur = "-"*100
+
+if os.path.exists("liste_json"):
+    with open("liste_json", "r") as f:
+        liste_courses = json.load(f)
+
 while True :
+
+    print(separateur)
+
     print("Choississez parmis les 5 options suivante : ")
     for i, element in enumerate(choix, start= 1):
         print(i, element)
@@ -40,5 +55,7 @@ while True :
         print("La liste à bien été vidée de son contenu")
     #Quitter
     elif a == "5":
+        with open("liste_json", "w") as f:
+            json.dump(liste_courses, f, indent=4)
         print("À bientôt")
         break
